@@ -40,12 +40,24 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(4,7,5){ //eslint-disable-line
-
+function sumArray(testArray){
+  var  dubSum =  sum( sum(testArray[0] , testArray[1]),  testArray[2] ) ;
+  var dubProduct  =  multiply( multiply(testArray[0] , testArray[1]),  testArray[2] ) ;
+  var mySumString =testArray[0]  + ' and ' + testArray[1] + ' and ' +testArray[2]  + ' sum to ' + dubSum + '.';
+  var myProductString = 'The product of ' + testArray[0] + ' and ' + testArray[1] + ' and ' +  testArray[2] + ' is ' + dubProduct +'.';
+  var finalArray = [dubSum, dubProduct, mySumString , myProductString];
+  return finalArray;
 }
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+function multiply ( a , b ){
+    return a * b ;
+}
+
+function sum (a , b ) {
+    return a + b ;
+}
+
+sumArray([1, 2 ,3 ] );
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
